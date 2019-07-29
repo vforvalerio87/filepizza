@@ -1,0 +1,10 @@
+{
+  "name": "filepizza",
+  "version": "2.0.0",
+  "description": "Peer-to-peer file transfers in your browser",
+  "main": "index.js",
+  "repository": "git@github.com:kern/filepizza.git",
+  "author": "Alex Kern <alex@kern.io>",
+  "license": "BSD-3-Clause",
+  "private": false
+}
