@@ -5,11 +5,11 @@ import { TOPPINGS } from './toppings';
 
 const server = createServer(
   new MemoryStorage(
-    createHexGenerator(16),
-    createDictionaryGenerator(TOPPINGS, 5, '/')
+    createDictionaryGenerator(TOPPINGS, 5, '-'),
+    createHexGenerator(256),
   )
 )
 
-const port = parseInt(process.env.PORT || '3000', 10);
+const port = parseInt(process.env.PORT || '3001', 10);
 
 server.listen(port);
