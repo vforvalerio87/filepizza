@@ -53,7 +53,8 @@ export class MemoryStorage implements Storage {
       return null
     }
 
-    channel = { ...channel, secret: null }
+    channel = { ...channel }
+    delete channel.secret;
 
     return channel;
   }

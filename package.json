@@ -11,17 +11,25 @@
     "crypto-promise": "^2.1.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
-    "koa-router": "^7.4.0"
+    "koa-router": "^7.4.0",
+    "next": "^9.0.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^12.6.8",
+    "@types/react": "^16.8.24",
     "jest": "^24.8.0",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
     "typescript": "^3.5.3"
   },
   "scripts": {
-    "test": "jest"
+    "server": "ts-node src/index.ts",
+    "test": "jest",
+    "dev": "next src",
+    "build": "next build src",
+    "start": "next start src"
   }
 }

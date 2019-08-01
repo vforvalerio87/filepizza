@@ -36,7 +36,7 @@ describe('MemoryStorage', () => {
     const channel = await storage.openChannel(publicKey)
     const retrievedChannel = await storage.getChannel(channel.token)
     expect(retrievedChannel.token).toEqual(channel.token)
-    expect(retrievedChannel.secret).toEqual(null)
+    expect(retrievedChannel.secret).toEqual(undefined)
     expect(retrievedChannel.publicKey).toEqual(publicKey)
   })
 

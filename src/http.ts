@@ -11,25 +11,42 @@ export function createServer(storage: Storage) {
   router.post('/channels', async (ctx, next) => {
     const body = ctx.request.body;
     const publicKey = body.publicKey;
-
     const channel = await storage.openChannel(publicKey);
+
     ctx.body = channel;
   })
 
   router.get('/channels/:token', async (ctx, next) => {
+    const token = ctx.params.token;
+    const channel = await storage.getChannel(token)
 
+    ctx.body = channel;
   })
 
   router.del('/channels/:token', async (ctx, next) => {
+    const token = ctx.params.token;
+    await storage.closeChannel(token);
 
+    ctx.body = null;
   })
 
   router.post('/channels/:token/messages', async (ctx, next) => {
+    const token = ctx.params.token;
+    const body = ctx.request.body;
+    const message = body.message;
 
+    await storage.postMessage(token, message)
+
+    ctx.body = null;
   })
 
   router.get('/channels/:token/messages', async (ctx, next) => {
+    const token = ctx.params.token;
+    const body = ctx.request.body;
+    const secret = body.secret;
 
+    const messages = await storage.receiveMessages(token, secret)
+    ctx.body = messages;
   })
 
   app
