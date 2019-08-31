@@ -1,10 +1,5 @@
 import { StringGenerator } from './generators';
-
-export interface Channel {
-  token: string;
-  secret?: string;
-  publicKey: string;
-}
+import { Channel } from './channel';
 
 export interface Storage {
   openChannel: (publicKey: string) => Promise<Channel>;
