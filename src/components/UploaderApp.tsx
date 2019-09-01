@@ -1,79 +1,75 @@
-import React, {useCallback, useState, useEffect} from 'react'
-import {useDropzone} from 'react-dropzone'
-import axios from 'axios'
-import { WebRTCUploadChannel } from '../webrtc'
+import { ec as EC } from "elliptic";
+import React, { useCallback, useEffect, useState } from "react";
+import { useDropzone } from "react-dropzone";
+import { AxiosClient } from "../client";
+import { WebRTCUploadChannel } from "../webrtc";
+import FileGallery from "./FileGallery";
+import Logo from "./Logo";
+import UploadOptions from "./UploadOptions";
 
-const CHANNELS_URL = 'http://localhost:3001/channels';
+const client = new AxiosClient("http://localhost:3001");
 
 export default function UploaderApp() {
-  const [files, setFiles] = useState([])
-  const [channel, setChannel] = useState(null)
-  const [connection, setConnection] = useState(null)
+  const [files, setFiles] = useState([]);
+  const [channel, setChannel] = useState(null);
+  const [connection, setConnection] = useState(null);
+  const [remoteDescription, setRemoteDescription] = useState("");
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({ onDrop });
 
   const onDrop = useCallback(
     acceptedFiles => {
-      const newFiles = files.concat(acceptedFiles)
-      setFiles(newFiles)
+      const newFiles = files.concat(acceptedFiles);
+      setFiles(newFiles);
     },
     [files, setFiles]
-  )
-
-  const onStart = useCallback(
-    async () => {
-      const publicKey = 'foobar' // TODO(@kern): Generate public key
-
-      const result = await axios.post(
-        CHANNELS_URL,
-        { data: { publicKey } }
-      );
-
-      setChannel(result.data);
-
-      const conn = new WebRTCUploadChannel("channel");
-      setConnection(conn)
-
-      const remoteDescription = await conn.open()
-      console.log(remoteDescription)
-    },
-    [setChannel, setConnection]
   );
 
-  const {getRootProps, getInputProps, isDragActive} = useDropzone({onDrop})
+  const onStart = useCallback(() => {
+    const ec = new EC("ed25519");
 
-  const [remoteDescription, setRemoteDescription] = useState("")
+    const key = ec.genKeyPair();
+    const publicKey = key.getPublic().encode("hex");
 
-  const onSubmit = useCallback(e => {
-    e.preventDefault()
-    const r = JSON.parse(remoteDescription)
-    connection.start(r).then(x => {
-      console.log(JSON.stringify(x))
-    })
-  }, [connection, remoteDescription])
+    client.openChannel(publicKey).then(async result => {
+      setChannel(result);
 
+      const conn = new WebRTCUploadChannel("channel");
+      setConnection(conn);
+
+      const desc = await conn.open();
+      console.log(desc);
+    });
+  }, [setChannel, setConnection]);
 
   return (
-    <div>
-      <div {...getRootProps()}>
-        <input {...getInputProps()} />
-        {
-          isDragActive ?
-          <p>Drop the files here ...</p> :
-          <p>Drag 'n' drop some files here, or click to select files</p>
-        }
-        <div>
-          {files.map(f => (<li key={f.name}>{f.name}</li>))}
-        </div>
+    <div className="wrapper" {...getRootProps()}>
+      <div>
+        <Logo />
+        {files.length > 0 ? (
+          <>
+            <FileGallery files={files} />
+            <UploadOptions />
+            <button onClick={onStart}>start</button>
+          </>
+        ) : (
+          <>
+            <p>Free peer-to-peer file transfers in your browser.</p>
+            <p>We never store anything. Files only served fresh.</p>
+            <input {...getInputProps()} />
+            <button>select a file</button>
+          </>
+        )}
       </div>
-      {channel || files.length === 0
-        ? null
-        : <button onClick={onStart}>Start</button>}
-      <form method="get" action="#" onSubmit={onSubmit}>
-        <input
-          type="text"
-          value={remoteDescription}
-          onChange={e => setRemoteDescription(e.target.value)}
-        />
-      </form>
+      <style jsx>{`
+        .wrapper {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        button {
+        }
+      `}</style>
     </div>
-  )
+  );
 }

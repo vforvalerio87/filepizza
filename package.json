@@ -11,6 +11,7 @@
     "@koa/cors": "2",
     "axios": "^0.19.0",
     "crypto-promise": "^2.1.0",
+    "elliptic": "^6.5.0",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-router": "^7.4.0",
@@ -26,8 +27,12 @@
     "@types/node": "^12.6.8",
     "@types/react": "^16.8.24",
     "jest": "^24.8.0",
+    "prettier": "^1.18.2",
     "ts-jest": "^24.0.2",
     "ts-node": "^8.3.0",
+    "tslint": "^5.19.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-plugin-prettier": "^2.0.1",
     "typescript": "^3.5.3"
   },
   "scripts": {
