@@ -60,30 +60,6 @@ export default class App extends React.Component {
           <div className="container">
             {this.state.isSupported ? <RouteHandler /> : <ErrorPage />}
           </div>
-          <footer className="footer">
-            <p>
-              BTC Donations: <strong>1P7yFQAC3EmpvsB7K9s6bKPvXEP1LPoQnY</strong>
-            </p>
-
-            <p className="byline">
-              Cooked up by{" "}
-              <a href="http://kern.io" target="_blank">
-                Alex Kern
-              </a>{" "}
-              &amp;{" "}
-              <a href="http://neeraj.io" target="_blank">
-                Neeraj Baid
-              </a>{" "}
-              while eating <strong>Sliver</strong> @ UC Berkeley &middot;{" "}
-              <a href="https://github.com/kern/filepizza#faq" target="_blank">
-                FAQ
-              </a>{" "}
-              &middot;{" "}
-              <a href="https://github.com/kern/filepizza" target="_blank">
-                Fork us
-              </a>
-            </p>
-          </footer>
           <script>FilePizza()</script>
           { process.env.GA_ACCESS_TOKEN ? <ga.Initializer /> : <div></div> }
         </body>
