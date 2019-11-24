@@ -3,7 +3,7 @@
   font-family: 'terminal-grotesque';
   font-style: normal;
   font-weight: 400;
-  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque.ttf) format('ttf');
+  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin */
@@ -11,7 +11,7 @@
   font-family: 'terminal-grotesque';
   font-style: normal;
   font-weight: 300;
-  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque.ttf) format('ttf');
+  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque.woff2) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin */
@@ -19,7 +19,7 @@
   font-family: 'terminal-grotesque';
   font-style: normal;
   font-weight: 400;
-  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque.ttf) format('terminal-grotesque');
+  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque.woff2) format('terminal-grotesque');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
 /* latin */
@@ -27,6 +27,6 @@
   font-family: 'terminal-grotesque';
   font-style: normal;
   font-weight: 700;
-  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque) format('ttf');
+  src: local('terminal-grotesque'), local('terminal-grotesque'), url(./terminal-grotesque) format('woff2');
   unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2212, U+2215, U+E0FF, U+EFFD, U+F000;
 }
