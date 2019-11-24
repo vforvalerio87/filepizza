@@ -49,8 +49,8 @@ export default class UploadPage extends React.Component {
             <Spinner dir="up" />
 
             <h1>FilePizza</h1>
-            <p>Free peer-to-peer file transfers in your browser.</p>
-            <small className="notice">We never store anything. Files only served fresh.</small>
+            <p>Sistema di condivisione file peer to peer</p>
+            <small className="notice">Non serve un server. Condividi i tuoi file senza che Google lo sappia. </small>
             <p>
               <label className="select-file-label">
                 <input type="file" onChange={this.handleSelectedFile} required/>
@@ -65,7 +65,7 @@ export default class UploadPage extends React.Component {
 
           <Spinner dir="up" animated />
 
-          <h1>FilePizza</h1>
+          <h1>Lecter Intelligence Sharing</h1>
           <p>Processing...</p>
 
         </div>
@@ -73,7 +73,7 @@ export default class UploadPage extends React.Component {
       case 'uploading':
         return <div className="page">
 
-          <h1>FilePizza</h1>
+          <h1>Lecter Intelligence Sharing</h1>
           <Spinner dir="up" animated
             name={this.state.fileName}
             size={this.state.fileSize} />

@@ -49,7 +49,7 @@ export default class App extends React.Component {
             property="og:image"
             content="https://file.pizza/images/fb.png"
           />
-          <title>Il tenebroso mondo del p2p</title>
+          <title>Lecter Intelligence Sharing</title>
           <link rel="stylesheet" href="/fonts/fonts.css" />
           <Bootstrap data={this.props.data} />
           <script src="https://cdn.jsdelivr.net/webtorrent/latest/webtorrent.min.js" />

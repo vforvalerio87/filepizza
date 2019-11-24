@@ -2,8 +2,8 @@
 
 beige = #F9F2E7
 dark-gray = #333
-gray = #777
-green = #8FBE00
+magenta = #ff00ff
+green = #00FF00
 light-blue = #40C0CB
 light-gray = #EEE
 light-green = #AEE239
@@ -22,14 +22,14 @@ global-reset()
 html, body { height: 100% }
 
 h1 {
-    color: red;
-    font: bold 56px/64px "Lobster Two", sans-serif;
+    color: black;
+    font: bold 56px/64px "terminal-grotesque", sans-serif;
     text-align: center;
     margin: 0 0 10px;
 }
 
 a {
-  color: gray
+  color: black
 }
 
 strong {
@@ -37,8 +37,8 @@ strong {
 }
 
 p {
-    color: gray;
-    font: 18px/22px "Quicksand", sans-serif;
+    color: black;
+    font: 18px/22px "terminal-grotesque", sans-serif;
     text-align: center;
     margin: 0;
 
@@ -48,8 +48,8 @@ p {
 }
 
 small {
-    color: gray;
-    font: 12px/22px "Quicksand", sans-serif;
+    color: black;
+    font: 12px/22px "terminal-grotesque", sans-serif;
     text-align: center;
     margin: 0;
 
@@ -61,7 +61,7 @@ small {
 .footer {
     width: 100%
     text-align: center
-    color: gray
+    color: black
     padding: 10px 0 10px
     position: fixed
     bottom: 0
@@ -76,7 +76,7 @@ small {
     }
 
     p {
-        font: 12px/20px "Quicksand", sans-serif;
+        font: 12px/20px "terminal-grotesque", sans-serif;
         @media (max-width: 600px) {
           font-size 14px
         }
@@ -115,10 +115,10 @@ small {
         text-align: center
 
         &:after {
-            color: white
+            color: black
             content: 'DROP TO UPLOAD'
             display: block
-            font: 24px/40px "Quicksand", sans-serif
+            font: 24px/40px "terminal-grotesque", sans-serif
             margin-top: -20px
             position: relative
             text-shadow: 0 1px dark-gray
@@ -168,9 +168,9 @@ small {
     }
 
     .spinner-name {
-        font: bold 18px/20px "Quicksand", sans-serif
+        font: bold 18px/20px "terminal-grotesque", sans-serif
         text-align: center
-        color: white
+        color: black
         overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
@@ -178,9 +178,9 @@ small {
     }
 
     .spinner-size {
-        font: italic 12px/20px "Quicksand", sans-serif
+        font: italic 12px/20px "terminal-grotesque", sans-serif
         text-align: center
-        color: white
+        color: black
         overflow: hidden
         text-overflow: ellipsis
         white-space: nowrap
@@ -194,8 +194,8 @@ small {
     margin 20px auto
 
     .long-url input {
-        background: beige
-        color: dark-gray
+        background: black
+        color: magenta
         border: 0
         margin: 0
         font: 18px/1 monospace
@@ -208,12 +208,12 @@ small {
 
     .short-url {
         background: light-gray
-        color: dark-gray
+        color: black
         height: 40px
         padding: 10px 20px
         text-align: center
         width: 100%
-        font: 14px/1 "Quicksand", sans-serif;
+        font: 14px/1 "terminal-grotesque", sans-serif;
         border-radius: 0 0 4px 4px
 
         span {
@@ -275,8 +275,8 @@ small {
 }
 
 .data {
-    color: gray
-    font: 14px/20px "Quicksand", sans-serif
+    color: black
+    font: 14px/20px "terminal-grotesque", sans-serif
     text-align: center
     overflow: hidden
 
@@ -288,34 +288,32 @@ small {
 
 .download-button {
     display: block
-    box-shadow: inset 0 1px 1px light-green
     padding: 20px
-    background: green
+    background: magenta
     border: none
     color: white
     width: calc(100vw - 40px)
     max-width: 800px
     margin: 0 auto
     border-radius: 4px
-    font: bold 18px/20px "Quicksand", sans-serif
+    font: bold 18px/20px "terminal-grotesque", sans-serif
     transition: 0.25s
     cursor: pointer
     text-transform: uppercase
 
     &:hover, &:focus {
-        box-shadow: inset 0 1px 1px green
-        background: light-green
+        background: #00FF00
     }
 
     &:active {
-        background: green
+        background: #00FF00
     }
 }
 
 .progress-bar {
     height: 60px
     overflow: hidden
-    background: green
+    background: white
     transition: all 1s ease
     width: calc(100vw - 40px)
     max-width: 800px
@@ -325,22 +323,20 @@ small {
     .progress-bar-inner {
         float: left
         height: 100%
-        background: green
-        box-shadow: inset 0 1px 1px light-green
+        background: magenta
         overflow: hidden
         border-radius: 4px
     }
 
     .progress-bar-text {
-        font: 14px/60px "Quicksand", sans-serif
-        color: white
+        font: 14px/60px "terminal-grotesque", sans-serif
+        color: black
         text-align: center
         text-transform: uppercase
     }
 
     &.progress-bar-failed {
-        background: red
-        box-shadow: inset 0 1px 1px light-red
+        background: #00FF00
 
         .progress-bar-text {
             text-align: center
@@ -348,10 +344,9 @@ small {
     }
 
     &.progress-bar-in-progress {
-        background: beige
+        background: white
         .progress-bar-inner {
-            background: #FFCC00
-            box-shadow: inset 0 1px 1px light-yellow
+            background:magenta
         }
 
         .progress-bar-text {
@@ -374,42 +369,22 @@ small {
 }
 
 .select-file-label {
-    border: 2px solid gray
+    border: 2px solid black
     border-radius: 4px
     padding: 2px 5px
     margin-top: 10px
-    background: light-gray
+    background: white
     display: inline-block
     cursor: pointer
     transition: all 0.25s ease
 
     &:hover, &:active {
-        border-color: yellow
-        background: white
-        color: red
+        border-color: black
+        background: magenta
     }
 
     input[type="file"] {
         position: fixed
         top: -1000px
-    }
-}
-
-.donate-button {
-    border: 2px solid red
-    border-radius: 4px
-    padding: 2px 5px
-    margin-right: 10px
-    background: yellow
-    display: inline-block
-    cursor: pointer
-    transition: all 0.25s ease
-    font: 12px/1 "Quicksand", sans-serif
-    color: white
-
-    &:hover, &:active {
-        border-color: yellow
-        background: white
-        color: red
     }
 }
