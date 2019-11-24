@@ -28,8 +28,9 @@ If you want to use [Google Analytics](https://marketingplatform.google.com/about
 ## Development
 
     $ git clone https://github.com/kern/filepizza.git
+    $ cd filepizza
     $ npm install
-    $ npm run-script build
+    $ npm run build
     $ npm start
 
 FilePizza is an isomorphic React application which uses the Flux application architecture. ES6 features are used liberally and compiled using Babel. Views are rendered on the server, store data is serialized and sent to the client, which then picks up where the server left off.
