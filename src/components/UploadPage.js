@@ -48,7 +48,7 @@ export default class UploadPage extends React.Component {
 
             <Spinner dir="up" />
 
-            <h1>FilePizza</h1>
+            <h1>Lecter Intelligence Sharing</h1>
             <p>Sistema di condivisione file peer to peer</p>
             <small className="notice">Non serve un server. Condividi i tuoi file senza che Google lo sappia. </small>
             <p>

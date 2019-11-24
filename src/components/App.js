@@ -36,10 +36,10 @@ export default class App extends React.Component {
           <meta charSet="utf-8" />
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="monetization" content="$twitter.xrptipbot.com/kernio" />
-          <meta property="og:url" content="https://file.pizza" />
+          <meta property="og:url" content="https://p2p.valli.design" />
           <meta
             property="og:title"
-            content="FilePizza - Your files, delivered."
+            content="Lecter Intelligence Sharing"
           />
           <meta
             property="og:description"
@@ -47,7 +47,7 @@ export default class App extends React.Component {
           />
           <meta
             property="og:image"
-            content="https://file.pizza/images/fb.png"
+            content="https://p2p.valli.design/images/fb.png"
           />
           <title>Lecter Intelligence Sharing</title>
           <link rel="stylesheet" href="/fonts/fonts.css" />
